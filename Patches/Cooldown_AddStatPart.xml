@@ -1,0 +1,20 @@
+<Patch>
+  <!-- Add our StatPart to the RangedWeapon_Cooldown stat -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/StatDef[defName="RangedWeapon_Cooldown"]/parts</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="RangedWeapon_Cooldown"]/parts</xpath>
+      <value>
+        <li Class="TSA.SkillAffectsCooldown.StatPart_ShootingCooldown" />
+      </value>
+    </match>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/StatDef[defName="RangedWeapon_Cooldown"]</xpath>
+      <value>
+        <parts>
+          <li Class="TSA.SkillAffectsCooldown.StatPart_ShootingCooldown" />
+        </parts>
+      </value>
+    </nomatch>
+  </Operation>
+</Patch>
